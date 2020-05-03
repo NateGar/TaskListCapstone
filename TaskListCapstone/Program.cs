@@ -62,7 +62,7 @@ namespace TaskListCapstone
                         }
                         else
                         {
-
+                            break;
                         }
                     }  
                 }
@@ -98,7 +98,7 @@ namespace TaskListCapstone
                         }
                         else
                         {
-
+                            break;
                         }
                     }
                 }
