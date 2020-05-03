@@ -35,15 +35,17 @@ namespace TaskListCapstone
                     while (true)
                     {                       
                             Console.WriteLine("please enter task number to delete: ");
-                            string userNum = Console.ReadLine().Trim();
-                            int numDelete = int.Parse(userNum);
+                        string userNum = Console.ReadLine().Trim();                           
                             Console.WriteLine($"Are you sure you would like to delete task: {userNum}? y/n");
-                            string answer = Console.ReadLine().Trim();
+                        string answer = Console.ReadLine().Trim();
                         if (answer == "y")
                         {
                             try
                             {
+                                int numDelete = int.Parse(userNum);
                                 taskList.RemoveAt(numDelete - 1);
+                                Console.WriteLine($"Task number:{userNum} has been deleted. ");
+                                break;
                             }
                             catch (FormatException)
                             {
@@ -53,7 +55,7 @@ namespace TaskListCapstone
                             {
                                 Console.WriteLine("Sorry that number was not connected to one of our tasks");
                             }
-                            catch(ArgumentOutOfRangeException)
+                            catch (ArgumentOutOfRangeException)
                             {
                                 Console.WriteLine("Sorry that number was not connected to one of our tasks");
                             }
@@ -70,15 +72,16 @@ namespace TaskListCapstone
                     {
                         Console.WriteLine("please enter task you would like to mark complete: ");
                         string userNum = Console.ReadLine().Trim();
-                        int taskComplete = int.Parse(userNum);
                         Console.WriteLine($"Are you sure you would like to mark task: {userNum} complete? y/n");
                         string answer = Console.ReadLine().Trim();
                         if (answer == "y")
                         {
                             try
                             {
-                                   
-                                    //taskList.RemoveAt(numDelete - 1);
+                                int taskComplete = int.Parse(userNum);
+                                taskList[taskComplete - 1].Complete = true;
+                                Console.WriteLine($"Task number:{userNum} has been marked complete. ");
+                                break;
                             }
                             catch (FormatException)
                             {
