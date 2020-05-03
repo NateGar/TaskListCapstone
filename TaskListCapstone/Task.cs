@@ -62,6 +62,10 @@ namespace TaskListCapstone
         {
 
         }
+        public Task(bool _complete)
+        {
+            complete = true;
+        }
         public Task(string _name, string _description, DateTime _dueDate)
         {
             name = _name;
